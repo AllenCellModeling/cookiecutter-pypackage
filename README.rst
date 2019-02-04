@@ -2,25 +2,17 @@
 Cookiecutter PyPackage
 ======================
 
-.. image:: https://pyup.io/repos/github/audreyr/cookiecutter-pypackage/shield.svg
-     :target: https://pyup.io/repos/github/audreyr/cookiecutter-pypackage/
-     :alt: Updates
+AICS-Cookiecutter_ template for a Python package.
 
-.. image:: https://travis-ci.org/audreyr/cookiecutter-pypackage.svg?branch=master
-    :target: https://travis-ci.org/audreyr/cookiecutter-pypackage     
-
-Cookiecutter_ template for a Python package.
-
-* GitHub repo: https://github.com/audreyr/cookiecutter-pypackage/
+* Original repo: https://github.com/audreyr/cookiecutter-pypackage/
 * Documentation: https://cookiecutter-pypackage.readthedocs.io/
-* Free software: BSD license
 
 Features
 --------
 
 * Testing setup with ``unittest`` and ``python setup.py test`` or ``py.test``
 * Travis-CI_: Ready for Travis Continuous Integration testing
-* Tox_ testing: Setup to easily test for Python 2.7, 3.4, 3.5, 3.6
+* Tox_ testing: Setup to easily test for Python 3.5, 3.6, 3.7
 * Sphinx_ docs: Documentation ready for generation with, for example, ReadTheDocs_
 * Bumpversion_: Pre-configured version bumping with a single command
 * Auto-release to PyPI_ when you push a new tag to master (optional)
@@ -53,7 +45,7 @@ Cookiecutter 1.4.0 or higher)::
 
 Generate a Python package project::
 
-    cookiecutter https://github.com/audreyr/cookiecutter-pypackage.git
+    cookiecutter gh:AllenCellModeling/cookiecutter-pypackage
 
 Then:
 
@@ -98,7 +90,7 @@ Similar Cookiecutter Templates
 
 * Also see the `network`_ and `family tree`_ for this repo. (If you find
   anything that should be listed here, please add it and send a pull request!)
-  
+
 Support this Project
 ~~~~~~~~~~~~~~~~~~~~~
 
