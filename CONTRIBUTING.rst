@@ -65,7 +65,7 @@ you already have `virtualenv` and `Git` installed and ready to go.
     $ cd path_for_the_repo
     $ git clone git@github.com:YOUR_NAME/cookiecutter-pypackage.git
 
-3. Assuming you have virtualenv installed (If you have Python3.5 this should already be there), you can create a new environment for your local development by typing::
+3. Assuming you have virtualenv installed (If you have Python3.6+ this should already be there), you can create a new environment for your local development by typing::
 
   .. code-block:: bash
 
@@ -135,7 +135,7 @@ Before you submit a pull request, check that it meets these guidelines:
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
 
-3. The pull request should work for Python 2.7, 3.4, 3.5 and 3.6, and for PyPy. Check
+3. The pull request should work for Python 3.6 and 3.7, and for PyPy. Check
    https://travis-ci.org/audreyr/cookiecutter-pypackage/pull_requests
    and make sure that the tests pass for all supported Python versions.
 

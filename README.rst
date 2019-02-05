@@ -2,7 +2,7 @@
 Cookiecutter PyPackage
 ======================
 
-AICS-Cookiecutter_ template for a Python package.
+AICS-Cookiecutter template for a Python package.
 
 * Original repo: https://github.com/audreyr/cookiecutter-pypackage/
 * Documentation: https://cookiecutter-pypackage.readthedocs.io/
@@ -12,7 +12,7 @@ Features
 
 * Testing setup with ``unittest`` and ``python setup.py test`` or ``py.test``
 * Travis-CI_: Ready for Travis Continuous Integration testing
-* Tox_ testing: Setup to easily test for Python 3.5, 3.6, 3.7
+* Tox_ testing: Setup to easily test for Python 3.6 and 3.7
 * Sphinx_ docs: Documentation ready for generation with, for example, ReadTheDocs_
 * Bumpversion_: Pre-configured version bumping with a single command
 * Auto-release to PyPI_ when you push a new tag to master (optional)
@@ -101,13 +101,6 @@ You can take our detailed course that covers all the features of this template, 
    :alt: Creating and Distributing Python Packages
    :target: https://twoscoopspress.thinkific.com/courses/creating-and-distributing-python-packages-es
 
-También disponible en español:
-
-.. image:: https://www.pydanny.com/static/packaging-course-es.jpg
-   :name: Creating and Distributing Python Packages ES image
-   :align: center
-   :alt: Creating and Distributing Python Packages ES
-   :target: https://twoscoopspress.thinkific.com/courses/creating-and-distributing-python-packages-es
 
 Fork This / Create Your Own
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
