@@ -94,7 +94,7 @@ you already have `virtualenv` and `Git` installed and ready to go.
 
   .. code-block:: bash
 
-    $ pip install -rrequirements_dev.txt
+    $ pip install -r requirements_dev.txt
     $ py.test ./tests
 
    If you get any errors while installing cryptography package (something like #include <openssl/aes.h>).
