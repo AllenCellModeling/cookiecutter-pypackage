@@ -18,7 +18,7 @@ setup_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest-runner',{%
 test_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest',{%- endif %} ]
 
 {%- set license_classifiers = {
-    'Allen Institute Software License': 'License Allen Institute Software License',
+    'Allen Institute Software License': 'License :: Allen Institute Software License',
     'MIT license': 'License :: OSI Approved :: MIT License',
     'BSD license': 'License :: OSI Approved :: BSD License',
     'ISC license': 'License :: OSI Approved :: ISC License (ISCL)',
