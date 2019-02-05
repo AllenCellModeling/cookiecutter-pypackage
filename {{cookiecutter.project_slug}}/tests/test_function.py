@@ -11,7 +11,7 @@ Docs: https://docs.pytest.org/en/latest/
       https://docs.pytest.org/en/latest/goodpractices.html#conventions-for-python-test-discovery
 """
 
-from ..example import Example
+from {{ cookiecutter.project_slug }} import Example
 
 
 def test_value_change():
