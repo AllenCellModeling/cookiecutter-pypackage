@@ -43,7 +43,7 @@ setup(
     description="{{ cookiecutter.project_short_description }}",
     entry_points={
         'console_scripts': [
-            'my_example=bin/my_example.:main',
+            'my_example={{ cookiecutter.project_slug }}.bin.my_example:main'
         ],
     },
     install_requires=requirements,
