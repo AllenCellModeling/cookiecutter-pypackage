@@ -15,7 +15,12 @@ requirements = []
 
 setup_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest-runner',{%- endif %} ]
 
-test_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest',{%- endif %} ]
+test_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest', 'pytest-cov', 'pytest-raises',{%- endif %} ]
+
+extra_requirements = {
+    'test': test_requirements,
+    'setup': setup_requirements
+}
 
 {%- set license_classifiers = {
     'Allen Institute Software License': 'License :: Allen Institute Software License',
@@ -57,6 +62,7 @@ setup(
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
+    extras_require=extra_requirements,
     url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}',
     version='{{ cookiecutter.version }}',
     zip_safe=False,
