@@ -17,9 +17,26 @@ setup_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest-runner',{%
 
 test_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest', 'pytest-cov', 'pytest-raises',{%- endif %} ]
 
+dev_requirements = [
+    'bumpversion>=0.5.3',
+    'wheel>=0.33.1',
+    'flake8>=3.7.7',
+    'tox>=3.5.2',
+    'coverage>=5.0a4',
+    'Sphinx>=2.0.0b1',
+    'twine>=1.13.0',
+    {%- if cookiecutter.use_pytest == 'y' %}
+    'pytest>=4.3.0',
+    'pytest-cov==2.6.1',
+    'pytest-raises>=0.10',
+    'pytest-runner>=4.4'
+    {%- endif %}
+]
+
 extra_requirements = {
     'test': test_requirements,
-    'setup': setup_requirements
+    'setup': setup_requirements,
+    'dev': dev_requirements
 }
 
 {%- set license_classifiers = {
