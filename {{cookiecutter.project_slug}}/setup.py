@@ -15,7 +15,20 @@ requirements = []
 
 setup_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest-runner',{%- endif %} ]
 
-test_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest', 'pytest-cov', 'pytest-raises',{%- endif %} ]
+test_requirements = [
+    {%- if cookiecutter.use_pytest == 'y' %}
+    'pytest',
+    'pytest-cov',
+    'pytest-raises',
+    {%- endif %}
+    'flake8',
+]
+
+interactive_requirements = [
+    'altair',
+    'jupyterlab',
+    'matplotlib',
+]
 
 dev_requirements = [
     'bumpversion>=0.5.3',
@@ -29,14 +42,16 @@ dev_requirements = [
     'pytest>=4.3.0',
     'pytest-cov==2.6.1',
     'pytest-raises>=0.10',
-    'pytest-runner>=4.4'
+    'pytest-runner>=4.4',
     {%- endif %}
 ]
 
 extra_requirements = {
     'test': test_requirements,
     'setup': setup_requirements,
-    'dev': dev_requirements
+    'dev': dev_requirements,
+    'interactive': interactive_requirements,
+    'all': [*test_requirements, *setup_requirements, *dev_requirements, *interactive_requirements]
 }
 
 {%- set license_classifiers = {
@@ -76,8 +91,9 @@ setup(
     keywords='{{ cookiecutter.project_slug }}',
     name='{{ cookiecutter.project_slug }}',
     packages=find_packages(include=['{{ cookiecutter.project_slug }}']),
+    python_requires=">=3.6",
     setup_requires=setup_requirements,
-    test_suite='tests',
+    test_suite='{{ cookiecutter.project_slug }}/tests',
     tests_require=test_requirements,
     extras_require=extra_requirements,
     url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}',
