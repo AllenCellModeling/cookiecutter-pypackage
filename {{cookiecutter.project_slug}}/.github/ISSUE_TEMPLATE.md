@@ -6,9 +6,8 @@
 
 
 ## Bug reports:
-* Date you used Cookiecutter PyPackage:
-* Cookiecutter version used, if any:
-* Python version, if any:
+* {{ cookiecutter.project_name }} version:
+* Python version:
 * Operating System:
 
 ### Description
