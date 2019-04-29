@@ -11,24 +11,17 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = []
-
-setup_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest-runner',{%- endif %} ]
-
 test_requirements = [
+    'codecov',
+    'flake8',
     {%- if cookiecutter.use_pytest == 'y' %}
     'pytest',
     'pytest-cov',
     'pytest-raises',
     {%- endif %}
-    'flake8',
 ]
 
-interactive_requirements = [
-    'altair',
-    'jupyterlab',
-    'matplotlib',
-]
+setup_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest-runner',{%- endif %} ]
 
 dev_requirements = [
     'bumpversion>=0.5.3',
@@ -46,12 +39,26 @@ dev_requirements = [
     {%- endif %}
 ]
 
+interactive_requirements = [
+    'altair',
+    'jupyterlab',
+    'matplotlib',
+]
+
+requirements = []
+
 extra_requirements = {
     'test': test_requirements,
     'setup': setup_requirements,
     'dev': dev_requirements,
     'interactive': interactive_requirements,
-    'all': [*test_requirements, *setup_requirements, *dev_requirements, *interactive_requirements]
+    'all': [
+        *requirements,
+        *test_requirements,
+        *setup_requirements,
+        *dev_requirements,
+        *interactive_requirements
+    ]
 }
 
 {%- set license_classifiers = {
