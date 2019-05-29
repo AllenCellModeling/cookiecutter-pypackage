@@ -13,11 +13,11 @@
         :alt: Build Status
 
 .. image:: https://readthedocs.org/projects/{{ cookiecutter.project_slug | replace("_", "-") }}/badge/?version=latest
-        :target: https://{{ cookiecutter.project_slug | replace("_", "-") }}.readthedocs.io/en/latest/?badge=latest
+        :target: https://{{ cookiecutter.project_slug | replace("_", "-") }}.readthedocs.io/en/latest
         :alt: Documentation Status
 
 .. image:: https://codecov.io/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug | replace("_", "-") }}/branch/master/graph/badge.svg
-        :target: https://codecov.io/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug | replace("_", "-") }}/branch/master/graph/badge.svg
+        :target: https://codecov.io/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug | replace("_", "-") }}
         :alt: Codecov Status
 {%- endif %}
 
