@@ -36,7 +36,9 @@ import {{ cookiecutter.project_slug }}
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
-    'sphinx.ext.napoleon'
+    'sphinx.ext.napoleon',
+    'sphinx.ext.mathjax',
+    'recommonmark', 
 ]
 
 # Control napoleon
@@ -45,14 +47,20 @@ napolean_include_init_with_doc = True
 napoleon_use_ivar = True
 napoleon_use_param = False
 
+# Control autodoc
+autoclass_content = "both"  # include init doc with class
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
-# source_suffix = ['.rst', '.md']
-source_suffix = '.rst'
+source_suffix = {
+        '.rst': 'restructuredtext',
+        '.txt': 'markdown',
+        '.md': 'markdown',
+}
 
 # The master toctree document.
 master_doc = 'index'
