@@ -30,6 +30,7 @@ dev_requirements = [
     'tox>=3.5.2',
     'coverage>=5.0a4',
     'Sphinx>=2.0.0b1',
+    "sphinx_rtd_theme>=1.2.0",
     'twine>=1.13.0',
     {%- if cookiecutter.use_pytest == 'y' %}
     'pytest>=4.3.0',
