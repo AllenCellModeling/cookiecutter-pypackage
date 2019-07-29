@@ -96,6 +96,8 @@ setup(
     license="{{ cookiecutter.open_source_license }}",
 {%- endif %}
     long_description=readme + '\n\n' + history,
+    # Uncomment the following line if you are using a markdown formatted readme
+    # long_description_content_type="text/markdown",
     include_package_data=True,
     keywords='{{ cookiecutter.project_slug }}',
     name='{{ cookiecutter.project_slug }}',
@@ -106,6 +108,8 @@ setup(
     tests_require=test_requirements,
     extras_require=extra_requirements,
     url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}',
+    # Do not edit this string manually, always use bumpversion
+    # Details in CONTRIBUTING.rst
     version='{{ cookiecutter.version }}',
     zip_safe=False,
 )
