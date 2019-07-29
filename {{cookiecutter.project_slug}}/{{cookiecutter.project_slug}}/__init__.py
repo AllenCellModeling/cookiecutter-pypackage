@@ -4,6 +4,8 @@
 
 __author__ = '{{ cookiecutter.full_name }}'
 __email__ = '{{ cookiecutter.email }}'
+# Do not edit this string manually, always use bumpversion
+# Details in CONTRIBUTING.md
 __version__ = '{{ cookiecutter.version }}'
 
 

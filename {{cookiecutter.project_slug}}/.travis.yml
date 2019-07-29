@@ -18,15 +18,26 @@ script:
 # Assuming you have installed the travis-ci CLI tool, after you
 # create the Github repo and add it to Travis, run the
 # following command to finish PyPI deployment setup:
-# $ travis encrypt --add deploy.password
+# If your project is built on travis-ci.org you can use
+# $ travis encrypt your-password-here --add deploy.password
+# Or just use this website:
+# Repository name: AllenCellModeling/aicsimageio
+# http://rkh.github.io/travis-encrypt/public/index.html
+# If your project is built on travis-ci.com you can use
+# $ travis encrypt your-password-here --add deploy.password --com
+#
+# Details here:
+# https://docs.travis-ci.com/user/deployment/pypi/
 deploy:
+  skip_cleanup: true
+  skip_existing: true
   provider: pypi
   distributions: sdist bdist_wheel
   user: {{ cookiecutter.pypi_username }}
   password:
     secure: PLEASE_REPLACE_ME
   on:
-    tags: true
+    branch: master
     repo: {{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
     python: 3.7
 {%- endif %}
