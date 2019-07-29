@@ -21,7 +21,7 @@ script:
 # If your project is built on travis-ci.org you can use
 # $ travis encrypt your-password-here --add deploy.password
 # Or just use this website:
-# Repository name: AllenCellModeling/aicsimageio
+# Repository name: {{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
 # http://rkh.github.io/travis-encrypt/public/index.html
 # If your project is built on travis-ci.com you can use
 # $ travis encrypt your-password-here --add deploy.password --com
