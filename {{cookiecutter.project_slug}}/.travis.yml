@@ -37,6 +37,8 @@ deploy:
   password:
     secure: PLEASE_REPLACE_ME
   on:
+    # To limit who can create releases, see how to set branch protection here:
+    # https://help.github.com/en/articles/configuring-protected-branches 
     branch: stable
     repo: {{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
     python: 3.7
