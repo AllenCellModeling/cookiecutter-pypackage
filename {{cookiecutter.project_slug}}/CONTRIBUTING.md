@@ -47,4 +47,4 @@ $ bumpversion patch # possible: major / minor / patch
 $ git push
 $ git push --tags
 
-Make and merge a PR to `stable` and GitHub will then deploy to PyPI once merged.
+Make and merge a PR to branch `stable` and GitHub will then deploy to PyPI once merged.
