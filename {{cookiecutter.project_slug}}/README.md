@@ -22,8 +22,8 @@ a.get_value()  # 10
 ```
 
 ## Installation
-**Stable Release:** `pip install aicsimageio`<br>
-**Development Head:** `pip install git+https://github.com/AllenCellModeling/aicsimageio.git`
+**Stable Release:** `pip install {{ cookiecutter.project_slug }}`<br>
+**Development Head:** `pip install git+https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}.git`
 
 ## Development
 See [CONTRIBUTING.md](CONTRIBUTING.md) for information related to developing the code.
