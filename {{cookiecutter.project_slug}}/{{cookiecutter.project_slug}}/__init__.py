@@ -2,11 +2,11 @@
 
 """Top-level package for {{ cookiecutter.project_name }}."""
 
-__author__ = '{{ cookiecutter.full_name }}'
-__email__ = '{{ cookiecutter.email }}'
+__author__ = "{{ cookiecutter.full_name }}"
+__email__ = "{{ cookiecutter.email }}"
 # Do not edit this string manually, always use bumpversion
 # Details in CONTRIBUTING.md
-__version__ = '{{ cookiecutter.version }}'
+__version__ = "{{ cookiecutter.version }}"
 
 
 def get_module_version():
