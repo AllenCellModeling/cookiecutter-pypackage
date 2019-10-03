@@ -1,4 +1,4 @@
-name: Publish
+{% raw %}name: Publish
 
 on:
   push:
@@ -25,4 +25,4 @@ jobs:
       uses: pypa/gh-action-pypi-publish@master
       with:
         user: {{ cookiecutter.pypi_username }}
-        password: ${{ secrets.PYPI_TOKEN }}
+        password: ${{ secrets.PYPI_TOKEN }}{% endraw %}

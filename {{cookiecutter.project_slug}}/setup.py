@@ -3,7 +3,7 @@
 
 """The setup script."""
 
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 with open("README.md") as readme_file:
     readme = readme_file.read()
@@ -27,7 +27,7 @@ dev_requirements = [
     "tox>=3.5.2",
     "coverage>=5.0a4",
     "Sphinx>=2.0.0b1",
-    "sphinx_rtd_theme>=1.2.0",
+    "sphinx_rtd_theme>=0.1.2",
     "recommonmark>=0.5.0",
     "twine>=1.13.0",
     "pytest>=4.3.0",

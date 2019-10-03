@@ -53,7 +53,7 @@ code coverage checks.
 #### Additional Optional Setup Steps:
 * Register {{ cookiecutter.project_slug }} with Codecov:
   * Make an account on [codecov.io](https://codecov.io) (Recommended to sign in with GitHub)
-  * Select {{ cookiecutter.github_username }} and click: `Add new repository`
+  * Select `{{ cookiecutter.github_username }}` and click: `Add new repository`
   * Copy the token provided, go to your [GitHub repository's settings and under the `Secrets` tab](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/settings/secrets), add a secret called
   `CODECOV_TOKEN` with the token you just copied. Don't worry, no one will see this token because it will be encrypted.
 * Register your project with PyPI:

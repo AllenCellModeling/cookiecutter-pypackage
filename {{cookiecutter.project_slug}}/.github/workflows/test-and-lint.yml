@@ -1,4 +1,4 @@
-name: Test and Lint
+{% raw %}name: Test and Lint
 
 on: [push, pull_request]
 
@@ -23,8 +23,8 @@ jobs:
         pip install .[test]
     - name: Test with pytest
       run: |
-        pytest --cov-report xml --cov={{ cookiecutter.project_slug }} {{ cookiecutter.project_slug }}/tests/
-        codecov -t ${{ secrets.CODECOV_TOKEN }}
+        {% endraw %}pytest --cov-report xml --cov={{ cookiecutter.project_slug }} {{ cookiecutter.project_slug }}/tests/
+        {% raw %}codecov -t ${{ secrets.CODECOV_TOKEN }}{% endraw %}
 
   lint:
     runs-on: ubuntu-latest
