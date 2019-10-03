@@ -46,6 +46,15 @@ To use this template use the following commands and then follow the prompts from
   * Next time you push to the branch: `stable`, GitHub actions will build and deploy your Python package to PyPI.
   * _Recommendation: Prior to pushing to `stable` it is recommended to install and run `bumpversion` as this will,
   tag a git commit for release and update the `setup.py` version number._
+* Add branch protections to `master` and `stable`
+  * To protect from just anyone pushing to `master` or `stable` (the branches with more tests and deploy configurations)
+  * Go to your GitHub repository's settings and under the `Branches` tab, click `Add rule` and select the settings you
+  believe best.
+  * _Recommendations:_
+    * _Require pull request reviews before merging_
+    * _Require status checks to pass before merging (All, as administrator of the repo you can override)_
+    * _Include administrators_
+    * _Restrict who can push to matching branches_
 * Add the repo to your ReadTheDocs_ account + turn on the ReadTheDocs service hook.
 
 

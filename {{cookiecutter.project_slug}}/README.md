@@ -57,11 +57,22 @@ code coverage checks.
   `CODECOV_TOKEN` with the token you just copied. Don't worry, no one will see this token because it will be encrypted.
 * Register your project with PyPI:
   * Make an account on [pypi.org](https://pypi.org)
-  * Go to your [GitHub repository's settings and under the `Secrets` tab](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/settings/secrets), add a secret called `PYPI_TOKEN` with your
+  * Go to your [GitHub repository's settings and under the `Secrets` tab](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/settings/secrets),
+  add a secret called `PYPI_TOKEN` with your
   password for your PyPI account. Don't worry, no one will see this password because it will be encrypted.
   * Next time you push to the branch: `stable`, GitHub actions will build and deploy your Python package to PyPI.
   * _Recommendation: Prior to pushing to `stable` it is recommended to install and run `bumpversion` as this will,
   tag a git commit for release and update the `setup.py` version number._
+* Add branch protections to `master` and `stable`
+    * To protect from just anyone pushing to `master` or `stable` (the branches with more tests and deploy
+    configurations)
+    * Go to your [GitHub repository's settings and under the `Branches` tab](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/settings/branches), click `Add rule` and select the settings you
+    believe best.
+    * _Recommendations:_
+      * _Require pull request reviews before merging_
+      * _Require status checks to pass before merging (Select all, as administrator of the repo you can override)_
+      * _Include administrators_
+      * _Restrict who can push to matching branches_
 * Add the repo to your ReadTheDocs account + turn on the ReadTheDocs service hook.
 
 {% if is_open_source %}
