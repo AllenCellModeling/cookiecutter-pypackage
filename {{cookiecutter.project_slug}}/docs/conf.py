@@ -42,6 +42,7 @@ extensions = [
     "sphinx.ext.napoleon",
     "sphinx.ext.mathjax",
     "recommonmark",
+    "m2r",
 ]
 
 # Control napoleon

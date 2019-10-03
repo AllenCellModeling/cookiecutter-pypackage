@@ -91,8 +91,7 @@ setup(
     license="{{ cookiecutter.open_source_license }}",
 {%- endif %}
     long_description=readme,
-    # Uncomment the following line if you are using a markdown formatted readme
-    # long_description_content_type="text/markdown",
+    long_description_content_type="text/markdown",
     include_package_data=True,
     keywords="{{ cookiecutter.project_slug }}",
     name="{{ cookiecutter.project_slug }}",
