@@ -12,7 +12,6 @@
 * Store values and retain the prior value in memory
 * ... some other functionality
 
-
 ## Quick Start
 ```python
 from {{ cookiecutter.project_slug }} import Example

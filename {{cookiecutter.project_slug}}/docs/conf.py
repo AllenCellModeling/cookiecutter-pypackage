@@ -20,10 +20,13 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('..'))
 
 import sphinx_rtd_theme
+
 import {{ cookiecutter.project_slug }}
+
+sys.path.insert(0, os.path.abspath('..'))
+
 
 # -- General configuration ---------------------------------------------
 
@@ -38,7 +41,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.napoleon',
     'sphinx.ext.mathjax',
-    'recommonmark', 
+    'recommonmark',
 ]
 
 # Control napoleon
@@ -177,6 +180,3 @@ texinfo_documents = [
      'One line description of project.',
      'Miscellaneous'),
 ]
-
-
-
