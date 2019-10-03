@@ -9,6 +9,7 @@ Welcome to {{ cookiecutter.project_name }}'s documentation!
    installation
    modules
    contributing
+   math
 
 Indices and tables
 ==================
