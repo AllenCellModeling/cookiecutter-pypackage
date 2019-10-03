@@ -41,7 +41,6 @@ extensions = [
     "sphinx.ext.viewcode",
     "sphinx.ext.napoleon",
     "sphinx.ext.mathjax",
-    "recommonmark",
     "m2r",
 ]
 
