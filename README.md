@@ -1,133 +1,61 @@
-======================
-Cookiecutter PyPackage
-======================
+# Cookiecutter PyPackage
 
-AICS-Cookiecutter template for a Python package.
+AICS Cookiecutter template for a Python package.
 
-* Original repo: https://github.com/audreyr/cookiecutter-pypackage/
-* Documentation: https://cookiecutter-pypackage.readthedocs.io/
+## Features
+* Uses `tox` and `pytest` for local testing
+* Builds and tests on Windows, Mac, and Ubuntu on every branch and pull request commit using GitHub Actions
+* Releases your Python Package to PyPI when your push to `stable` using GitHub Actions
+* Pre-configured to work with Sphinx and readthedocs doc generation
+* Example code samples for objects, tests, and bin scripts
 
-Features
---------
+## The Four Commands You Need To Know
+1. `pip install -e .[dev]`
 
-* Testing setup ``pytest``
-* Travis-CI_: Ready for Travis Continuous Integration testing
-* Tox_ testing: Setup to easily test for Python 3.6 and 3.7
-* Sphinx_ docs: Documentation ready for generation with, for example, ReadTheDocs_
-* Bumpversion_: Pre-configured version bumping with a single command
-* Auto-release to PyPI_ when you push a new tag to master (optional)
+    This will install your package in editable mode with all the required development dependencies (i.e. `tox`).
 
-Quickstart
-----------
+2. `make build`
 
-Install the latest Cookiecutter if you haven't installed it yet (this requires
-Cookiecutter 1.4.0 or higher)::
+    This will run `tox` which will run all your tests in both Python 3.6 and Python 3.7 and it will lint your code.
 
-    pip install -U cookiecutter
+3. `make clean`
 
-Generate a Python package project::
+    This will clean up various Python and build generated files so that you can ensure that you are working in a clean
+    environment.
 
-    cookiecutter gh:AllenCellModeling/cookiecutter-pypackage
+4. `make docs`
 
-Then:
+    This will generate and launch a web browser to view the most up-to-date documentation for your Python package.
 
-* Create a repo and put it there.
-* Add the repo to your Travis-CI_ account.
-* Install the dev requirements into a virtualenv. (``pip install -r requirements_dev.txt``)
-* Register_ your project with PyPI.
-* Run the Travis CLI command `travis encrypt --add deploy.password` to encrypt your PyPI password in Travis config
-  and activate automated deployment on PyPI when you push a new tag to master branch.
+## Quickstart
+To use this template use the following commands and then follow the prompts from the terminal.
+
+1. `pip install cookiecutter`
+2. `cookiecutter gh:AllenCellModeling/cookiecutter-pypackage`
+
+#### Optional Steps:
+* Register your project with Codecov:
+  * Make an account on [codecov.io](https://codecov.io) (Recommended to sign in with GitHub)
+  * Select the organization you want to link a repository to and click: `Add new repository`
+  * Copy the token provided, go to your GitHub repository's settings and under the `Secrets` tab, add a secret called
+  `CODECOV_TOKEN` with the token you just copied. Don't worry, no one will see this token because it will be encrypted.
+* Register your project with PyPI:
+  * Make an account on [pypi.org](https://pypi.org)
+  * Go to your GitHub repository's settings and under the `Secrets` tab, add a secret called `PYPI_TOKEN` with your
+  password for your PyPI account. Don't worry, no one will see this password because it will be encrypted.
+  * Next time you push to the branch: `stable`, GitHub actions will build and deploy your Python package to PyPI.
+  * _Recommendation: Prior to pushing to `stable` it is recommended to install and run `bumpversion` as this will,
+  tag a git commit for release and update the `setup.py` version number._
 * Add the repo to your ReadTheDocs_ account + turn on the ReadTheDocs service hook.
-* Release your package by pushing a new tag to master.
-* Add a `requirements.txt` file that specifies the packages you will need for
-  your project and their versions. For more info see the `pip docs for requirements files`_.
-
-.. _`pip docs for requirements files`: https://pip.pypa.io/en/stable/user_guide/#requirements-files
-.. _Register: https://packaging.python.org/distributing/#register-your-project
-
-For more details, see the `cookiecutter-pypackage tutorial`_.
-
-.. _`cookiecutter-pypackage tutorial`: https://cookiecutter-pypackage.readthedocs.io/en/latest/tutorial.html
-
-Generated cookiecutter Package Usage
------------------------
-
-List of commands below:
-
-* ``make clean``
-* ``make clean-build``
-* ``make clean-pyc``
-* ``make clean-tests``
-* ``make lint``
-* ``make test``
-* ``make test-all``
-* ``make coverage``
-* ``make docs``
-* ``make servedocs``
-* ``make release``
-* ``make dist``
-* ``make install``
-
-A general workflow would be to:
-
-* create a development branch
-* proceed with your work
-* before you push, run ``make test-all`` at the top level of your repository
-* if everything succeeds, push your branch and make a pull request
-
-For more details, please view the ``Makefile`` found at the top level of your repository.
-
-Not Exactly What You Want?
---------------------------
-
-Don't worry, you have options:
-
-Similar Cookiecutter Templates
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* `Nekroze/cookiecutter-pypackage`_: A fork of this with a PyTest test runner,
-  strict flake8 checking with Travis/Tox, and some docs and `setup.py` differences.
-
-* `tony/cookiecutter-pypackage-pythonic`_: Fork with py2.7+3.3 optimizations.
-  Flask/Werkzeug-style test runner, ``_compat`` module and module/doc conventions.
-  See ``README.rst`` or the `github comparison view`_ for exhaustive list of
-  additions and modifications.
-
-* `ardydedase/cookiecutter-pypackage`_: A fork with separate requirements files rather than a requirements list in the ``setup.py`` file.
-
-* `lgiordani/cookiecutter-pypackage`_: A fork of Cookiecutter that uses Punch_ instead of Bumpversion_ and with separate requirements files.
 
 
-Fork This / Create Your Own
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you have differences in your preferred setup, I encourage you to fork this
-to create your own version. Or create your own; it doesn't strictly have to
-be a fork.
-
-* Once you have your own version working, add it to the Similar Cookiecutter
-  Templates list above with a brief description.
-
-* It's up to you whether or not to rename your fork/own version. Do whatever
-  you think sounds good.
-
-Or Submit a Pull Request
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-I also accept pull requests on this, if they're small, atomic, and if they
-make my own packaging experience better.
+## Suggested Git Branch Strategy
+1. `master` is for the most up-to-date development, very rarely should you directly commit to this branch.
+2. `stable` is for releases only. When you want to release your project on PyPI, simple make a PR from `master` to
+`stable`, this template will handle the rest.
+3. Your day to day work should exist on branches separate from `master`. Even if it is just yourself working on the
+repository, make a PR from your working branch to `master` so that you get GitHub actions to run tests, linting, and
+code coverage checks.
 
 
-.. _Travis-CI: http://travis-ci.com/
-.. _Tox: http://testrun.org/tox/
-.. _Sphinx: http://sphinx-doc.org/
-.. _ReadTheDocs: https://readthedocs.io/
-.. _Bumpversion: https://github.com/peritus/bumpversion
-.. _Punch: https://github.com/lgiordani/punch
-.. _PyPi: https://pypi.python.org/pypi
-
-.. _`Nekroze/cookiecutter-pypackage`: https://github.com/Nekroze/cookiecutter-pypackage
-.. _`tony/cookiecutter-pypackage-pythonic`: https://github.com/tony/cookiecutter-pypackage-pythonic
-.. _`ardydedase/cookiecutter-pypackage`: https://github.com/ardydedase/cookiecutter-pypackage
-.. _`lgiordani/cookiecutter-pypackage`: https://github.com/lgiordani/cookiecutter-pypackage
-.. _github comparison view: https://github.com/tony/cookiecutter-pypackage-pythonic/compare/audreyr:master...master
+**Original repo:** https://github.com/audreyr/cookiecutter-pypackage/
