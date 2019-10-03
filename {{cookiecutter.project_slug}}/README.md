@@ -66,8 +66,8 @@ code coverage checks.
 * Add branch protections to `master` and `stable`
     * To protect from just anyone pushing to `master` or `stable` (the branches with more tests and deploy
     configurations)
-    * Go to your [GitHub repository's settings and under the `Branches` tab](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/settings/branches), click `Add rule` and select the settings you
-    believe best.
+    * Go to your [GitHub repository's settings and under the `Branches` tab](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/settings/branches), click `Add rule` and select the
+    settings you believe best.
     * _Recommendations:_
       * _Require pull request reviews before merging_
       * _Require status checks to pass before merging (Select all, as administrator of the repo you can override)_
