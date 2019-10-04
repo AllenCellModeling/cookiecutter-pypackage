@@ -30,7 +30,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for information related to developing the
 #### The Three Commands You Need To Know
 1. `make build`
 
-    This will run `tox` which will run all your tests in both Python 3.6 and Python 3.7 and it will lint your code.
+    This will run `tox` which will run all your tests in both Python 3.6 and Python 3.7 as well as linting your code.
 
 2. `make clean`
 
@@ -42,12 +42,16 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for information related to developing the
     This will generate and launch a web browser to view the most up-to-date documentation for your Python package.
 
 #### Suggested Git Branch Strategy
-1. `master` is for the most up-to-date development, very rarely should you directly commit to this branch.
-2. `stable` is for releases only. When you want to release your project on PyPI, simple make a PR from `master` to
-`stable`, this template will handle the rest.
-3. Your day to day work should exist on branches separate from `master`. Even if it is just yourself working on the
-repository, make a PR from your working branch to `master` so that you get GitHub actions to run tests, linting, and
-code coverage checks.
+1. `master` is for the most up-to-date development, very rarely should you directly commit to this branch. GitHub
+Actions will run on every push and on a CRON to this branch but still recommended to commit to your development
+branches and make pull requests to master.
+2. `stable` is for releases only. When you want to release your project on PyPI, simply make a PR from `master` to
+`stable`, this template will handle the rest as long as you have added your PyPI information described in the above
+**Optional Steps** section.
+3. Your day-to-day work should exist on branches separate from `master`. Even if it is just yourself working on the
+repository, make a PR from your working branch to `master` so that you can ensure your commits don't break the
+development head. GitHub Actions will run on every push to any branch or any pull request from any branch to any other
+branch.
 
 #### Additional Optional Setup Steps:
 * Register {{ cookiecutter.project_slug }} with Codecov:

@@ -5,7 +5,7 @@ AICS Cookiecutter template for a Python package.
 ## Features
 * Uses `tox` and `pytest` for local testing
 * Builds and tests on Windows, Mac, and Ubuntu on every branch and pull request commit using GitHub Actions
-* Releases your Python Package to PyPI when your push to `stable` using GitHub Actions
+* Releases your Python Package to PyPI when you push to `stable` using GitHub Actions
 * Pre-configured to work with Sphinx and readthedocs doc generation
 * Example code samples for objects, tests, and bin scripts
 
@@ -16,7 +16,7 @@ AICS Cookiecutter template for a Python package.
 
 2. `make build`
 
-    This will run `tox` which will run all your tests in both Python 3.6 and Python 3.7 and it will lint your code.
+    This will run `tox` which will run all your tests in both Python 3.6 and Python 3.7 as well as linting your code.
 
 3. `make clean`
 
@@ -59,12 +59,16 @@ To use this template use the following commands and then follow the prompts from
 
 
 ## Suggested Git Branch Strategy
-1. `master` is for the most up-to-date development, very rarely should you directly commit to this branch.
-2. `stable` is for releases only. When you want to release your project on PyPI, simple make a PR from `master` to
-`stable`, this template will handle the rest.
-3. Your day to day work should exist on branches separate from `master`. Even if it is just yourself working on the
-repository, make a PR from your working branch to `master` so that you get GitHub actions to run tests, linting, and
-code coverage checks.
+1. `master` is for the most up-to-date development, very rarely should you directly commit to this branch. GitHub
+Actions will run on every push and on a CRON to this branch but still recommended to commit to your development
+branches and make pull requests to master.
+2. `stable` is for releases only. When you want to release your project on PyPI, simply make a PR from `master` to
+`stable`, this template will handle the rest as long as you have added your PyPI information described in the above
+**Optional Steps** section.
+3. Your day-to-day work should exist on branches separate from `master`. Even if it is just yourself working on the
+repository, make a PR from your working branch to `master` so that you can ensure your commits don't break the
+development head. GitHub Actions will run on every push to any branch or any pull request from any branch to any other
+branch.
 
 
 **Original repo:** https://github.com/audreyr/cookiecutter-pypackage/
