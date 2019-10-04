@@ -10,7 +10,7 @@ Ready to contribute? Here's how to set up `{{ cookiecutter.project_slug }}` for 
 * Clone your fork locally:
 
 ```
-$ git clone git@github.com:{your_name_here}/{{ cookiecutter.project_slug }}.git
+$ git clone --recurse-submodules git@github.com:{your_name_here}/{{ cookiecutter.project_slug }}.git
 ```
 
 * Install the project in editable mode. (It is also recommended to work in a virtualenv or anaconda environment):
