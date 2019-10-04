@@ -1,10 +1,13 @@
 # Cookiecutter PyPackage
 
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+
 AICS Cookiecutter template for a Python package.
 
 ## Features
-* Uses `tox` and `pytest` for local testing
-* Builds and tests on Windows, Mac, and Ubuntu on every branch and pull request commit using GitHub Actions
+* Local testing uses `tox` and `pytest` for local testing, simply run `tox` or `make build` from a terminal in the
+project home directory
+* Builds and runs unit tests on Windows, Mac, and Ubuntu on every branch and pull request commit using GitHub Actions
 * Releases your Python Package to PyPI when you push to `stable` using GitHub Actions
 * Pre-configured to work with Sphinx and readthedocs doc generation
 * Example code samples for objects, tests, and bin scripts
