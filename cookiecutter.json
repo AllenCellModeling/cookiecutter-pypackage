@@ -7,9 +7,6 @@
   "project_short_description": "Python Boilerplate contains all the boilerplate you need to create a Python package.",
   "pypi_username": "{{ cookiecutter.github_username }}",
   "version": "0.1.0",
-  "use_pytest": "y",
-  "use_pypi_deployment_with_travis": "y",
-  "create_author_file": "y",
   "open_source_license": [
     "Allen Institute Software License",
     "MIT license",
