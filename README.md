@@ -7,10 +7,10 @@ AICS Cookiecutter template for a Python package.
 ## Features
 * Local testing uses `tox` and `pytest` for local testing, simply run `tox` or `make build` from a terminal in the
 project home directory
-* Builds and runs unit tests on Windows, Mac, and Ubuntu on every branch and pull request commit using GitHub Actions
+* Runs tests on Windows, Mac, and Ubuntu on every branch and pull request commit using GitHub Actions
 * Releases your Python Package to PyPI when you push to `stable` using GitHub Actions
-* Pre-configured to work with Sphinx and readthedocs doc generation
-* Example code samples for objects, tests, and bin scripts
+* Automatically builds project documentation using Sphinx on every push to master
+* Includes example code samples for objects, tests, and bin scripts
 
 ## The Four Commands You Need To Know
 1. `pip install -e .[dev]`
@@ -42,6 +42,15 @@ To use this template use the following commands and then follow the prompts from
   * Select the organization you want to link a repository to and click: `Add new repository`
   * Copy the token provided, go to your GitHub repository's settings and under the `Secrets` tab, add a secret called
   `CODECOV_TOKEN` with the token you just copied. Don't worry, no one will see this token because it will be encrypted.
+* Generate and add an access token as a secret to the repository for auto documentation generation to work
+  * Go to your [GitHub account's Personal Access Tokens page](https://github.com/settings/tokens)
+  * Click: `Generate new token`
+  * _Recommendations:_
+    * _Name the token: "Auto-Documentation Generation" or similar so you know what it is being used for later_
+    * _Select only: `repo:status`, `repo_deployment`, and `public_repo` to limit what this token has access to_
+  * Copy the newly generated token
+  * Go to your GitHub repository's settings and under the `Secrets` tab, add a secret called `ACCESS_TOKEN` with the
+  personal access token you just created. Don't worry, no one will see this password because it will be encrypted.
 * Register your project with PyPI:
   * Make an account on [pypi.org](https://pypi.org)
   * Go to your GitHub repository's settings and under the `Secrets` tab, add a secret called `PYPI_TOKEN` with your
@@ -56,10 +65,7 @@ To use this template use the following commands and then follow the prompts from
   * _Recommendations:_
     * _Require pull request reviews before merging_
     * _Require status checks to pass before merging (All, as administrator of the repo you can override)_
-    * _Include administrators_
     * _Restrict who can push to matching branches_
-* Add the repo to your ReadTheDocs_ account + turn on the ReadTheDocs service hook.
-
 
 ## Suggested Git Branch Strategy
 1. `master` is for the most up-to-date development, very rarely should you directly commit to this branch. GitHub
