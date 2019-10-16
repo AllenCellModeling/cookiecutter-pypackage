@@ -64,7 +64,7 @@ To use this template use the following commands and then follow the prompts from
   believe best.
   * _Recommendations:_
     * _Require pull request reviews before merging_
-    * _Require status checks to pass before merging (All, as administrator of the repo you can override)_
+    * _Require status checks to pass before merging (Recommended: lint and test)_
     * _Restrict who can push to matching branches_
 
 ## Suggested Git Branch Strategy
