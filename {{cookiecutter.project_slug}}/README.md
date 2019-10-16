@@ -2,6 +2,7 @@
 # {{ cookiecutter.project_name }}
 
 [![Build Status](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/workflows/Build%20Master/badge.svg)](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/actions)
+[![Documentation](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/workflows/Documentation/badge.svg)](https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug }})
 [![Code Coverage](https://codecov.io/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/branch/master/graph/badge.svg)](https://codecov.io/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }})
 
 {{ cookiecutter.project_short_description }}
@@ -23,6 +24,9 @@ a.get_value()  # 10
 ## Installation
 **Stable Release:** `pip install {{ cookiecutter.project_slug }}`<br>
 **Development Head:** `pip install git+https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}.git`
+
+## Documentation
+For full package documentation please visit [{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug }}](https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug }}).
 
 ## Development
 See [CONTRIBUTING.md](CONTRIBUTING.md) for information related to developing the code.
@@ -57,13 +61,24 @@ branch.
 * Register {{ cookiecutter.project_slug }} with Codecov:
   * Make an account on [codecov.io](https://codecov.io) (Recommended to sign in with GitHub)
   * Select `{{ cookiecutter.github_username }}` and click: `Add new repository`
-  * Copy the token provided, go to your [GitHub repository's settings and under the `Secrets` tab](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/settings/secrets), add a secret called
-  `CODECOV_TOKEN` with the token you just copied. Don't worry, no one will see this token because it will be encrypted.
+  * Copy the token provided, go to your [GitHub repository's settings and under the `Secrets` tab](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/settings/secrets),
+  add a secret called `CODECOV_TOKEN` with the token you just copied.
+  Don't worry, no one will see this token because it will be encrypted.
+* Generate and add an access token as a secret to the repository for auto documentation generation to work
+  * Go to your [GitHub account's Personal Access Tokens page](https://github.com/settings/tokens)
+  * Click: `Generate new token`
+  * _Recommendations:_
+    * _Name the token: "Auto-Documentation Generation" or similar so you know what it is being used for later_
+    * _Select only: `repo:status`, `repo_deployment`, and `public_repo` to limit what this token has access to_
+  * Copy the newly generated token
+  * Go to your [GitHub repository's settings and under the `Secrets` tab](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/settings/secrets),
+  add a secret called `ACCESS_TOKEN` with the personal access token you just created.
+  Don't worry, no one will see this password because it will be encrypted.
 * Register your project with PyPI:
   * Make an account on [pypi.org](https://pypi.org)
   * Go to your [GitHub repository's settings and under the `Secrets` tab](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/settings/secrets),
-  add a secret called `PYPI_TOKEN` with your
-  password for your PyPI account. Don't worry, no one will see this password because it will be encrypted.
+  add a secret called `PYPI_TOKEN` with your password for your PyPI account.
+  Don't worry, no one will see this password because it will be encrypted.
   * Next time you push to the branch: `stable`, GitHub actions will build and deploy your Python package to PyPI.
   * _Recommendation: Prior to pushing to `stable` it is recommended to install and run `bumpversion` as this will,
   tag a git commit for release and update the `setup.py` version number._
@@ -74,10 +89,8 @@ branch.
     settings you believe best.
     * _Recommendations:_
       * _Require pull request reviews before merging_
-      * _Require status checks to pass before merging (Select all, as administrator of the repo you can override)_
-      * _Include administrators_
+      * _Require status checks to pass before merging (Recommended: lint and test)_
       * _Restrict who can push to matching branches_
-* Add the repo to your ReadTheDocs account + turn on the ReadTheDocs service hook.
 
 {% if is_open_source %}
 ***Free software: {{ cookiecutter.open_source_license }}***
