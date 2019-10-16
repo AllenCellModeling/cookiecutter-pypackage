@@ -48,10 +48,13 @@ clean:  ## clean all build, python, and testing files
 build: ## run tox / run tests and lint
 	tox
 
-docs: ## generate Sphinx HTML documentation, including API docs
+gen-docs: ## generate Sphinx HTML documentation, including API docs
 	rm -f docs/{{cookiecutter.project_slug}}.rst
 	rm -f docs/modules.rst
 	sphinx-apidoc -o docs/ {{ cookiecutter.project_slug }} **/tests/
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
+
+docs: ## generate Sphinx HTML documentation, including API docs, and serve to browser
+	make gen-docs
 	$(BROWSER) docs/_build/html/index.html
