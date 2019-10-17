@@ -9,7 +9,7 @@ AICS Cookiecutter template for a Python package.
 project home directory
 * Runs tests on Windows, Mac, and Ubuntu on every branch and pull request commit using GitHub Actions
 * Releases your Python Package to PyPI when you push to `stable` using GitHub Actions
-* Automatically builds project documentation using Sphinx on every push to master
+* Automatically builds documentation using Sphinx on every push to master and deploys to GitHub Pages
 * Includes example code samples for objects, tests, and bin scripts
 
 ## The Four Commands You Need To Know
