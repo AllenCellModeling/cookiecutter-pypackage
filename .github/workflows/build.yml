@@ -3,7 +3,7 @@ name: Example Repo
 on:
   push:
     branches:
-      - 'feature/ci'
+      - master
   schedule:
     # <minute [0,59]> <hour [0,23]> <day of the month [1,31]> <month of the year [1,12]> <day of the week [0,6]>
     # https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07
@@ -19,7 +19,7 @@ jobs:
       uses: JacksonMaxfield/github-pages-deploy-action-python@master
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BASE_BRANCH: 'feature/ci' # The branch the action should deploy from.
+        BASE_BRANCH: master # The branch the action should deploy from.
         BRANCH: 'test-build' # The branch the action should deploy to.
         FOLDER: python_boilerplate # The folder the action should deploy.
         BUILD_SCRIPT: pip install cookiecutter && cookiecutter gh:AllenCellModeling/cookiecutter-pypackage --no-input # The build script the action should run prior to deploying.
