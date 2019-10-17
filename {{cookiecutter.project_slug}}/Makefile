@@ -49,7 +49,7 @@ build: ## run tox / run tests and lint
 	tox
 
 gen-docs: ## generate Sphinx HTML documentation, including API docs
-	rm -f docs/{{cookiecutter.project_slug}}.rst
+	rm -f docs/{{cookiecutter.project_slug}}*.rst
 	rm -f docs/modules.rst
 	sphinx-apidoc -o docs/ {{ cookiecutter.project_slug }} **/tests/
 	$(MAKE) -C docs clean
