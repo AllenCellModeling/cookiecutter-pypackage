@@ -22,4 +22,4 @@ jobs:
         BASE_BRANCH: 'feature/ci' # The branch the action should deploy from.
         BRANCH: 'test-build' # The branch the action should deploy to.
         FOLDER: python_boilerplate # The folder the action should deploy.
-        BUILD_SCRIPT: pip install cookiecutter && cookiecutter cookiecutter gh:AllenCellModeling/cookiecutter-pypackage --no-input # The build script the action should run prior to deploying.
+        BUILD_SCRIPT: pip install cookiecutter && cookiecutter gh:AllenCellModeling/cookiecutter-pypackage --no-input # The build script the action should run prior to deploying.
