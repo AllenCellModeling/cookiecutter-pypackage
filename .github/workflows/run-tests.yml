@@ -26,7 +26,7 @@ jobs:
         pip install .[test]
     - name: Test with pytest
       run: |
-        pytest --cov-report xml --cov=python_boilerplate python_boilerplate/tests/
+        pytest python_boilerplate/tests/
 
   lint:
     runs-on: ubuntu-latest
