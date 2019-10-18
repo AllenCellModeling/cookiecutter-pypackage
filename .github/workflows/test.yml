@@ -1,4 +1,4 @@
-name: Example Repo
+name: Test Repo Construction
 
 on:
   push:
