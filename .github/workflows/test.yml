@@ -2,11 +2,8 @@ name: Test Repo Construction
 
 on:
   pull_request:
-    branches-ignore:
-      - 'example-build'
-      - 'gh-pages'
-      - 'test-build'
-      - 'test-docs'
+    branches:
+      - master
 
 jobs:
   test-repo:
