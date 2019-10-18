@@ -9,7 +9,7 @@ on:
       - 'test-docs'
 
 jobs:
-  build-repo:
+  test-repo:
     runs-on: ubuntu-latest
 
     steps:
