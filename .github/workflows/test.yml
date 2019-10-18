@@ -3,7 +3,6 @@ name: Test Repo Construction
 on:
   pull_request:
     branches-ignore:
-      - master
       - 'example-build'
       - 'gh-pages'
       - 'test-build'
