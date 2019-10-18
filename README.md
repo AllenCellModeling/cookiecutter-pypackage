@@ -1,6 +1,6 @@
 # Cookiecutter PyPackage
 
-[![Example Repo Status](https://github.com/AllenCellModeling/cookiecutter-pypackage/workflows/Example%20Repo/badge.svg)](https://github.com/AllenCellModeling/cookiecutter-pypackage/tree/test-build)
+[![Example Repo Status](https://github.com/AllenCellModeling/cookiecutter-pypackage/workflows/Example%20Repo/badge.svg)](https://github.com/AllenCellModeling/cookiecutter-pypackage/tree/testbuild)
 [![Example Testing Status](https://github.com/AllenCellModeling/cookiecutter-pypackage/workflows/Example%20Tests/badge.svg)](https://github.com/AllenCellModeling/cookiecutter-pypackage/actions/?workflow=Example+Tests)
 [![Example Documentation Status](https://github.com/AllenCellModeling/cookiecutter-pypackage/workflows/Example%20Documentation/badge.svg)](https://AllenCellModeling.github.io/cookiecutter-pypackage)
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
@@ -16,7 +16,7 @@ project home directory
 * Includes example code samples for objects, tests, and bin scripts
 
 ## Examples
-* For an example of a repo that is built from this template, go to the [test-build branch](https://github.com/AllenCellModeling/cookiecutter-pypackage/tree/test-build).
+* For an example of a repo that is built from this template, go to the [testbuild branch](https://github.com/AllenCellModeling/cookiecutter-pypackage/tree/testbuild).
 * For an example of the documentation that is auto-generated from this template, go to the [GitHub Pages for this repo](https://AllenCellModeling.github.io/cookiecutter-pypackage).
 * For an example of the action that runs on every push or pull request when using this template, go to the [GitHub Actions for this repo](https://github.com/AllenCellModeling/cookiecutter-pypackage/actions/?workflow=Example+Tests).
 
