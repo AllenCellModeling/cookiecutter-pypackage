@@ -3,7 +3,7 @@ name: Example Documentation
 on:
   push:
     branches:
-      - 'test-build'
+      - test-build
 
 jobs:
   build-docs:
