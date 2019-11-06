@@ -7,6 +7,11 @@
 
 AICS Cookiecutter template for a Python package.
 
+## About
+This cookiecutter template will generate a basic Python project with some example code and tests. It is also
+preconfigured to use GitHub Actions for basic CI build, test, and release as well as documentation generation. An
+example of the generated repo can be found [here](https://github.com/AllenCellModeling/cookiecutter-pypackage/tree/example-build).
+
 ## Features
 * Local testing uses `tox` and `pytest` for local testing, simply run `tox` or `make build` from a terminal in the
 project home directory
@@ -73,9 +78,8 @@ To use this template use the following commands and then follow the prompts from
   * _Recommendations:_
     * _Require pull request reviews before merging_
     * _Require status checks to pass before merging (Recommended: lint and test)_
-    * _Restrict who can push to matching branches_
 
-## Suggested Git Branch Strategy
+#### Suggested Git Branch Strategy
 1. `master` is for the most up-to-date development, very rarely should you directly commit to this branch. GitHub
 Actions will run on every push and on a CRON to this branch but still recommended to commit to your development
 branches and make pull requests to master.
@@ -86,6 +90,10 @@ branches and make pull requests to master.
 repository, make a PR from your working branch to `master` so that you can ensure your commits don't break the
 development head. GitHub Actions will run on every push to any branch or any pull request from any branch to any other
 branch.
+4. It is recommended to use "Squash and Merge" commits when committing PR's. It makes each set of changes to `master`
+atomic and as a side effect naturally encourages small well defined PR's.
+5. GitHub's UI is bad for rebasing `master` onto `stable`, as it simply adds the commits to the other branch instead of
+properly rebasing from what I can tell. You should always rebase locally on the CLI until they fix it.
 
 
 **Original repo:** https://github.com/audreyr/cookiecutter-pypackage/
