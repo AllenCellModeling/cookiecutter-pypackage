@@ -18,7 +18,7 @@ jobs:
         BASE_BRANCH: master # The branch the action should deploy from.
         BRANCH: 'test-build' # The branch the action should deploy to.
         FOLDER: python_boilerplate # The folder the action should deploy.
-        BUILD_SCRIPT: pip install cookiecutter && cookiecutter gh:AllenCellModeling/cookiecutter-pypackage --no-input && rm -Rf python_boilerplate/.github/workflows/
+        BUILD_SCRIPT: pip install cookiecutter && rm -Rf python_boilerplate && cookiecutter gh:AllenCellModeling/cookiecutter-pypackage --no-input && rm -Rf python_boilerplate/.github/workflows/
 
     - name: Generate Example Docs
       uses: JacksonMaxfield/github-pages-deploy-action-python@master
