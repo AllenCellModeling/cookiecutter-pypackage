@@ -31,17 +31,21 @@ For full package documentation please visit [{{ cookiecutter.github_username }}.
 ## Development
 See [CONTRIBUTING.md](CONTRIBUTING.md) for information related to developing the code.
 
-#### The Three Commands You Need To Know
-1. `make build`
+## The Four Commands You Need To Know
+1. `pip install -e .[dev]`
+
+    This will install your package in editable mode with all the required development dependencies (i.e. `tox`).
+
+2. `make build`
 
     This will run `tox` which will run all your tests in both Python 3.6 and Python 3.7 as well as linting your code.
 
-2. `make clean`
+3. `make clean`
 
     This will clean up various Python and build generated files so that you can ensure that you are working in a clean
     environment.
 
-3. `make docs`
+4. `make docs`
 
     This will generate and launch a web browser to view the most up-to-date documentation for your Python package.
 
@@ -56,6 +60,10 @@ branches and make pull requests to master.
 repository, make a PR from your working branch to `master` so that you can ensure your commits don't break the
 development head. GitHub Actions will run on every push to any branch or any pull request from any branch to any other
 branch.
+4. It is recommended to use "Squash and Merge" commits when committing PR's. It makes each set of changes to `master`
+atomic and as a side effect naturally encourages small well defined PR's.
+5. GitHub's UI is bad for rebasing `master` onto `stable`, as it simply adds the commits to the other branch instead of
+properly rebasing from what I can tell. You should always rebase locally on the CLI until they fix it.
 
 #### Additional Optional Setup Steps:
 * Register {{ cookiecutter.project_slug }} with Codecov:
@@ -90,7 +98,6 @@ branch.
     * _Recommendations:_
       * _Require pull request reviews before merging_
       * _Require status checks to pass before merging (Recommended: lint and test)_
-      * _Restrict who can push to matching branches_
 
 {% if is_open_source %}
 ***Free software: {{ cookiecutter.open_source_license }}***

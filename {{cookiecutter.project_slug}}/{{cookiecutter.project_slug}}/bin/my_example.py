@@ -6,11 +6,12 @@ This sample script will get deployed in the bin directory of the
 users' virtualenv when the parent module is installed using pip.
 """
 
-import sys
 import argparse
 import logging
+import sys
 import traceback
-from {{ cookiecutter.project_slug }} import get_module_version, Example
+
+from {{ cookiecutter.project_slug }} import Example, get_module_version
 
 ###############################################################################
 
