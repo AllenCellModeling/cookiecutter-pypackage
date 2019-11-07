@@ -31,8 +31,7 @@ jobs:
 
     - name: Switch to test-build Branch
       run: |
-        git fetch
-        git checkout test-build
+        git branch --set-upstream-to=origin/test-build test-build
         git pull
 
     - name: Set up Python
