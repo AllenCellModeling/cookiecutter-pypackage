@@ -5,16 +5,31 @@
 AICS Cookiecutter template for a Python package.
 
 ## About
-This cookiecutter template will generate a basic Python project with some example code and tests. It is also
-preconfigured to use GitHub Actions for basic CI build, test, and release as well as documentation generation.
+`Cookiecutter` is a Python package to generate templated projects. This repository is a template for `cookiecutter` to generate a Python project which contains following:
+
+* A directory structure for your project
+* Prebuilt `setup.py` file to help you develop and install your package
+* Includes examples of good Python practices, including tests
+* Continuous integration
+  * Preconfigured to generate project documentation
+  * Preconfigured to automatically run tests every time you push to GitHub
+  * Preconfigured to help you release your package publicly (PyPI)
+
+We think that this template provides a good starting point for any Python project.
 
 ## Features
-* Local testing uses `tox` and `pytest` for local testing, simply run `tox` or `make build` from a terminal in the
-project home directory
+* Uses `tox` (an environment manager) and `pytest` for local testing, simply run `tox` or `make build`
+from a terminal in the project home directory
 * Runs tests on Windows, Mac, and Ubuntu on every branch and pull request commit using GitHub Actions
 * Releases your Python Package to PyPI when you push to `stable` using GitHub Actions
 * Automatically builds documentation using Sphinx on every push to master and deploys to GitHub Pages
 * Includes example code samples for objects, tests, and bin scripts
+
+## Quickstart
+To use this template use the following commands and then follow the prompts from the terminal.
+
+1. `pip install cookiecutter`
+2. `cookiecutter gh:AllenCellModeling/cookiecutter-pypackage`
 
 ## The Four Commands You Need To Know
 1. `pip install -e .[dev]`
@@ -34,13 +49,18 @@ project home directory
 
     This will generate and launch a web browser to view the most up-to-date documentation for your Python package.
 
-## Quickstart
-To use this template use the following commands and then follow the prompts from the terminal.
-
-1. `pip install cookiecutter`
-2. `cookiecutter gh:AllenCellModeling/cookiecutter-pypackage`
-
 #### Optional Steps:
+* Turn your project into a GitHub repository:
+  * Make sure you have `git` installed, if you don't, [follow these instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+  * Make an account on [github.com](https://github.com)
+  * Go to [make a new repository](https://github.com/new)
+  * _Recommendations:_
+    * _It is strongly recommended to make the repository name the same as the Python package name_
+    * _A lot of the following optional steps are *free* if the repository is Public, plus open source is cool_
+  * Once you are in your newly generated cookiecutter Python project directory, run `git init`
+  * After `git` has initialized locally, run the following commands:
+    * `git remote add origin git@github.com:{your github username}/{your repository name}.git`
+    * `git push -u origin master`
 * Register your project with Codecov:
   * Make an account on [codecov.io](https://codecov.io) (Recommended to sign in with GitHub)
   * Select the organization you want to link a repository to and click: `Add new repository`

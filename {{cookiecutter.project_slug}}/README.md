@@ -49,23 +49,18 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for information related to developing the
 
     This will generate and launch a web browser to view the most up-to-date documentation for your Python package.
 
-#### Suggested Git Branch Strategy
-1. `master` is for the most up-to-date development, very rarely should you directly commit to this branch. GitHub
-Actions will run on every push and on a CRON to this branch but still recommended to commit to your development
-branches and make pull requests to master.
-2. `stable` is for releases only. When you want to release your project on PyPI, simply make a PR from `master` to
-`stable`, this template will handle the rest as long as you have added your PyPI information described in the above
-**Optional Steps** section.
-3. Your day-to-day work should exist on branches separate from `master`. Even if it is just yourself working on the
-repository, make a PR from your working branch to `master` so that you can ensure your commits don't break the
-development head. GitHub Actions will run on every push to any branch or any pull request from any branch to any other
-branch.
-4. It is recommended to use "Squash and Merge" commits when committing PR's. It makes each set of changes to `master`
-atomic and as a side effect naturally encourages small well defined PR's.
-5. GitHub's UI is bad for rebasing `master` onto `stable`, as it simply adds the commits to the other branch instead of
-properly rebasing from what I can tell. You should always rebase locally on the CLI until they fix it.
-
 #### Additional Optional Setup Steps:
+* Turn your project into a GitHub repository:
+  * Make sure you have `git` installed, if you don't, [follow these instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+  * Make an account on [github.com](https://github.com)
+  * Go to [make a new repository](https://github.com/new)
+  * _Recommendations:_
+    * _It is strongly recommended to make the repository name the same as the Python package name_
+    * _A lot of the following optional steps are *free* if the repository is Public, plus open source is cool_
+  * Once you are in your newly generated cookiecutter Python project directory, run `git init`
+  * After `git` has initialized locally, run the following commands:
+    * `git remote add origin git@github.com:{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}.git`
+    * `git push -u origin master`
 * Register {{ cookiecutter.project_slug }} with Codecov:
   * Make an account on [codecov.io](https://codecov.io) (Recommended to sign in with GitHub)
   * Select `{{ cookiecutter.github_username }}` and click: `Add new repository`
@@ -98,6 +93,22 @@ properly rebasing from what I can tell. You should always rebase locally on the 
     * _Recommendations:_
       * _Require pull request reviews before merging_
       * _Require status checks to pass before merging (Recommended: lint and test)_
+
+#### Suggested Git Branch Strategy
+1. `master` is for the most up-to-date development, very rarely should you directly commit to this branch. GitHub
+Actions will run on every push and on a CRON to this branch but still recommended to commit to your development
+branches and make pull requests to master.
+2. `stable` is for releases only. When you want to release your project on PyPI, simply make a PR from `master` to
+`stable`, this template will handle the rest as long as you have added your PyPI information described in the above
+**Optional Steps** section.
+3. Your day-to-day work should exist on branches separate from `master`. Even if it is just yourself working on the
+repository, make a PR from your working branch to `master` so that you can ensure your commits don't break the
+development head. GitHub Actions will run on every push to any branch or any pull request from any branch to any other
+branch.
+4. It is recommended to use "Squash and Merge" commits when committing PR's. It makes each set of changes to `master`
+atomic and as a side effect naturally encourages small well defined PR's.
+5. GitHub's UI is bad for rebasing `master` onto `stable`, as it simply adds the commits to the other branch instead of
+properly rebasing from what I can tell. You should always rebase locally on the CLI until they fix it.
 
 {% if is_open_source %}
 ***Free software: {{ cookiecutter.open_source_license }}***
