@@ -21,7 +21,7 @@
 import os
 import sys
 
-import sphinx_rtd_theme  # noqa: F401
+import sphinx_rtd_theme
 
 import {{ cookiecutter.project_slug }}
 
