@@ -47,7 +47,7 @@ def test_parameterized_value_change(start_val, next_val, expected_values):
     pytest.param("hello", None, None, marks=pytest.mark.raises(exception=ValueError)),  # Init value isn't an integer
     pytest.param(1, "hello", None, marks=pytest.mark.raises(exception=ValueError))  # Update value isn't an integer
 ])
-def test_parameterized_value_change(start_val, next_val, expected_values):
+def test_parameterized_value_change_with_exceptions(start_val, next_val, expected_values):
     example = Example(start_val)
     example.update_value(next_val)
     assert expected_values == example.values
