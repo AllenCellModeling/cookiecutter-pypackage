@@ -1,16 +1,12 @@
 # Cookiecutter PyPackage
 
-[![Example Repo Status](https://github.com/AllenCellModeling/cookiecutter-pypackage/workflows/Example%20Repo/badge.svg)](https://github.com/AllenCellModeling/cookiecutter-pypackage/tree/example-build)
-[![Example Testing Status](https://img.shields.io/badge/Example%20Tests-passing-brightgreen)](https://github.com/AllenCellModeling/cookiecutter-pypackage/actions/?workflow=Example+Repo)
-[![Example Documentation Status](https://img.shields.io/badge/Example%20Documentation-passing-brightgreen)](https://AllenCellModeling.github.io/cookiecutter-pypackage)
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 
 AICS Cookiecutter template for a Python package.
 
 ## About
 This cookiecutter template will generate a basic Python project with some example code and tests. It is also
-preconfigured to use GitHub Actions for basic CI build, test, and release as well as documentation generation. An
-example of the generated repo can be found [here](https://github.com/AllenCellModeling/cookiecutter-pypackage/tree/example-build).
+preconfigured to use GitHub Actions for basic CI build, test, and release as well as documentation generation.
 
 ## Features
 * Local testing uses `tox` and `pytest` for local testing, simply run `tox` or `make build` from a terminal in the
@@ -19,11 +15,6 @@ project home directory
 * Releases your Python Package to PyPI when you push to `stable` using GitHub Actions
 * Automatically builds documentation using Sphinx on every push to master and deploys to GitHub Pages
 * Includes example code samples for objects, tests, and bin scripts
-
-## Examples
-* For an example of a repo that is built from this template, go to the [example-build branch](https://github.com/AllenCellModeling/cookiecutter-pypackage/tree/example-build).
-* For an example of the documentation that is auto-generated from this template, go to the [GitHub Pages for this repo](https://AllenCellModeling.github.io/cookiecutter-pypackage).
-* For an example of the action that runs on every push or pull request when using this template, go to the [GitHub Actions for this repo](https://github.com/AllenCellModeling/cookiecutter-pypackage/actions/?workflow=Example+Repo).
 
 ## The Four Commands You Need To Know
 1. `pip install -e .[dev]`
