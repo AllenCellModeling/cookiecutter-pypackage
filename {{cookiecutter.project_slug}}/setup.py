@@ -11,6 +11,7 @@ with open("README.md") as readme_file:
 test_requirements = [
     "codecov",
     "flake8",
+    "black",
     "pytest",
     "pytest-cov",
     "pytest-raises",
