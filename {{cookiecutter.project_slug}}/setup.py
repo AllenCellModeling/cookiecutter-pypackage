@@ -97,7 +97,7 @@ setup(
     include_package_data=True,
     keywords="{{ cookiecutter.project_slug }}",
     name="{{ cookiecutter.project_slug }}",
-    packages=find_packages(),
+    packages=find_packages(exclude=["tests", "*.tests", "*.tests.*"]),
     python_requires=">=3.6",
     setup_requires=setup_requirements,
     test_suite="{{ cookiecutter.project_slug }}/tests",
