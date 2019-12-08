@@ -23,8 +23,7 @@ jobs:
         pip install .[test]
     - name: Test with pytest
       run: |
-        {% endraw %}pytest --cov-report xml --cov={{ cookiecutter.project_slug }} {{ cookiecutter.project_slug }}/tests/
-        {% raw %}codecov -t ${{ secrets.CODECOV_TOKEN }}{% endraw %}
+        {% endraw %}pytest {{ cookiecutter.project_slug }}/tests/
 
   lint:
     runs-on: ubuntu-latest
