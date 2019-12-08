@@ -9,7 +9,7 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v1
     - name: Generate Docs
       uses: JacksonMaxfield/github-pages-deploy-action-python@master
       env:

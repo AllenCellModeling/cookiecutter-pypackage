@@ -9,9 +9,9 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v1
     - name: Set up Python
-      uses: actions/setup-python@master
+      uses: actions/setup-python@v1
       with:
         python-version: 3.7
     - name: Install dependencies
@@ -22,7 +22,7 @@ jobs:
       run: |
         python setup.py sdist bdist_wheel
     - name: Publish to PyPI
-      uses: pypa/gh-action-pypi-publish@master
+      uses: pypa/gh-action-pypi-publish@v1
       with:
         user: {{ cookiecutter.pypi_username }}
         {% raw %}password: ${{ secrets.PYPI_TOKEN }}{% endraw %}
