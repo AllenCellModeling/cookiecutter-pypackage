@@ -61,7 +61,7 @@ extra_requirements = {
 }
 
 {%- set license_classifiers = {
-    "Allen Institute Software License": "License :: Allen Institute Software License",
+    "Allen Institute Software License": "License :: Free for non-commercial use",
     "MIT license": "License :: OSI Approved :: MIT License",
     "BSD license": "License :: OSI Approved :: BSD License",
     "ISC license": "License :: OSI Approved :: ISC License (ISCL)",
