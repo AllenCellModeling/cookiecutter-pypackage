@@ -1,0 +1,43 @@
+name: Test Repo Construction
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test-repo:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+    - name: Install Dependencies
+      run: |
+        pip install cookiecutter
+    - name: Generate Repo
+      run: |
+        cookiecutter . --no-input
+        rm -Rf python_boilerplate/.github/workflows/
+    - name: Install Generated Repo Dependencies
+      run: |
+        pip install -e python_boilerplate[all]
+    - name: Run Generated Repo Tests
+      run: |
+        pytest python_boilerplate/python_boilerplate/tests/
+    - name: Publish Repo
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BASE_BRANCH: ${{ github.head_ref }} # The branch the action should deploy from.
+        BRANCH: 'test-build' # The branch the action should deploy to.
+        FOLDER: python_boilerplate/ # The folder the action should deploy
+        CLEAN: true
+    - name: Test Generate Docs
+      run: |
+        cd python_boilerplate
+        make gen-docs
+        touch docs/_build/html/.nojekyll

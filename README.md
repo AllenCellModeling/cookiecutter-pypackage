@@ -1,11 +1,14 @@
 # Cookiecutter PyPackage
 
+[![Example Repo Status](https://github.com/AllenCellModeling/cookiecutter-pypackage/workflows/Build%20Example%20Repo/badge.svg)](https://github.com/AllenCellModeling/cookiecutter-pypackage/tree/example-build)
+
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 
 AICS Cookiecutter template for a Python package.
 
 ## About
-`Cookiecutter` is a Python package to generate templated projects. This repository is a template for `cookiecutter` to generate a Python project which contains following:
+`Cookiecutter` is a Python package to generate templated projects.
+This repository is a template for `cookiecutter` to generate a Python project which contains following:
 
 * A directory structure for your project
 * Prebuilt `setup.py` file to help you develop and install your package
@@ -24,6 +27,10 @@ from a terminal in the project home directory
 * Releases your Python Package to PyPI when you push to `stable` using GitHub Actions
 * Automatically builds documentation using Sphinx on every push to master and deploys to GitHub Pages
 * Includes example code samples for objects, tests, and bin scripts
+
+## Example
+* For an example of the base project that is built from this template, go to the
+[example-build branch](https://github.com/AllenCellModeling/cookiecutter-pypackage/tree/example-build).
 
 ## Quickstart
 To use this template use the following commands and then follow the prompts from the terminal.
