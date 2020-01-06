@@ -70,7 +70,7 @@ master_doc = "index"
 
 # General information about the project.
 project = u"Python Boilerplate"
-copyright = u'2019, Jackson Maxfield Brown'
+copyright = u'2020, Jackson Maxfield Brown'
 author = u"Jackson Maxfield Brown"
 
 # The version info for the project you"re documenting, acts as replacement
