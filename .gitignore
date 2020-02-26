@@ -81,6 +81,9 @@ target/
 # celery beat schedule file
 celerybeat-schedule
 
+# Dask
+dask-worker-space
+
 # SageMath parsed files
 *.sage.py
 
