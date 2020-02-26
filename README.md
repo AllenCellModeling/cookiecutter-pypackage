@@ -45,7 +45,8 @@ To use this template use the following commands and then follow the prompts from
 
 2. `make build`
 
-    This will run `tox` which will run all your tests in both Python 3.6 and Python 3.7 as well as linting your code.
+    This will run `tox` which will run all your tests in both Python 3.6, Python 3.7, and Python 3.8 as well as linting
+    your code.
 
 3. `make clean`
 
