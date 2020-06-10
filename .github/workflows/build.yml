@@ -29,10 +29,21 @@ jobs:
         rm -Rf python_boilerplate/.github/workflows/
     - name: Install Generated Repo Dependencies
       run: |
-        pip install -e python_boilerplate[all]
+        cd python_boilerplate
+        pip install -e .[all]
     - name: Run Generated Repo Tests
       run: |
-        pytest python_boilerplate/python_boilerplate/tests/
+        pytest python_boilerplate
+    - name: Run Generated Repo Lint
+      run: |
+        cd python_boilerplate
+        flake8 python_boilerplate --count --verbose --show-source --statistics
+        black --check python_boilerplate
+    - name: Test Generate Docs
+      run: |
+        cd python_boilerplate
+        make gen-docs
+        touch docs/_build/html/.nojekyll
     - name: Publish Repo
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
@@ -41,8 +52,3 @@ jobs:
         BRANCH: 'example-build' # The branch the action should deploy to.
         FOLDER: python_boilerplate/ # The folder the action should deploy
         CLEAN: true
-    - name: Test Generate Docs
-      run: |
-        cd python_boilerplate
-        make gen-docs
-        touch docs/_build/html/.nojekyll
