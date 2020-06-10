@@ -31,7 +31,7 @@ jobs:
         pytest python_boilerplate
     - name: Run Generated Repo Lint
       run: |
-        flake8 python_boilerplate --count --verbose --show-source --statistics
+        flake8 python_boilerplate --exclude=docs --count --verbose --show-source --statistics
         black --check python_boilerplate
     - name: Test Generate Docs
       run: |
