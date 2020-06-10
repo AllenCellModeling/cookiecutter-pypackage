@@ -32,10 +32,10 @@ jobs:
         pip install -e python_boilerplate[all]
     - name: Run Generated Repo Build
       run: |
+        cd python_boilerplate
         make build
     - name: Test Generate Docs
       run: |
-        cd python_boilerplate
         make gen-docs
         touch docs/_build/html/.nojekyll
     - name: Publish Repo
