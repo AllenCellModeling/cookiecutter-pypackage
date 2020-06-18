@@ -68,7 +68,6 @@ setup(
         "{{ license_classifiers[cookiecutter.open_source_license] }}",
 {%- endif %}
         "Natural Language :: English",
-        "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
     ],
@@ -88,7 +87,7 @@ setup(
     keywords="{{ cookiecutter.project_slug }}",
     name="{{ cookiecutter.project_slug }}",
     packages=find_packages(exclude=["tests", "*.tests", "*.tests.*"]),
-    python_requires=">=3.6",
+    python_requires=">=3.7",
     setup_requires=setup_requirements,
     test_suite="{{ cookiecutter.project_slug }}/tests",
     tests_require=test_requirements,
