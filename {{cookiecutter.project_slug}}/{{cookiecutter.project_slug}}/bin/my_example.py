@@ -38,7 +38,8 @@ class Args(argparse.Namespace):
 
     def __parse(self):
         p = argparse.ArgumentParser(
-            prog="run_exmaple", description="A simple example of a bin script",
+            prog="run_exmaple",
+            description="A simple example of a bin script",
         )
 
         p.add_argument(
@@ -66,7 +67,10 @@ class Args(argparse.Namespace):
             help="The first argument value",
         )
         p.add_argument(
-            "--debug", action="store_true", dest="debug", help=argparse.SUPPRESS,
+            "--debug",
+            action="store_true",
+            dest="debug",
+            help=argparse.SUPPRESS,
         )
         p.parse_args(namespace=self)
 
