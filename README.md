@@ -79,9 +79,8 @@ terminal.
             package name_
         -   _A lot of the following optional steps are *free* if the repository is Public,
             plus open source is cool_
-    -   After a GitHub repo has been created, run the following commands:
-        -   `git remote add origin git@github.com:{your github username}/{your repository name}.git`
-        -   `git push -u origin main`
+    -   After a GitHub repo has been created, run the commands listed under:
+        "...or push an existing repository from the command line"
 -   Register your project with Codecov:
     -   Make an account on [codecov.io](https://codecov.io)(Recommended to sign in with GitHub)
         everything else will be handled for you.
