@@ -4,6 +4,7 @@ Contributions are welcome, and they are greatly appreciated! Every little bit
 helps, and credit will always be given.
 
 ## Get Started!
+
 Ready to contribute? Here's how to set up `python_boilerplate` for local development.
 
 1. Fork the `python_boilerplate` repo on GitHub.
@@ -54,12 +55,9 @@ Make sure all your changes are committed.
 Then run:
 
 ```bash
-$ bumpversion patch # possible: major / minor / patch
-$ git push
-$ git push --tags
-git branch -D stable
-git checkout -b stable
-git push --set-upstream origin stable -f
+bump2version patch # possible: major / minor / patch
+git push
+git push --tags
 ```
 
 This will release a new package version on Git + GitHub and publish to PyPI.

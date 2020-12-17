@@ -25,7 +25,7 @@ test_requirements = [
 dev_requirements = [
     *setup_requirements,
     *test_requirements,
-    "bumpversion>=0.6.0",
+    "bump2version>=1.0.1",
     "coverage>=5.1",
     "ipython>=7.15.0",
     "m2r>=0.2.1",
@@ -59,6 +59,7 @@ setup(
         "Natural Language :: English",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
     ],
     description="Python Boilerplate contains all the boilerplate you need to create a Python package.",
     entry_points={
