@@ -1,3 +1,7 @@
+> [!IMPORTANT]
+> We are no longer actively maintaining this repository. All active work by the Allen Institute for Cell Science is located under the **[AllenCell](https://github.com/AllenCell)** organization.
+
+
 # Cookiecutter PyPackage
 
 [![Example Repo Status](https://github.com/AllenCellModeling/cookiecutter-pypackage/workflows/Build%20Example%20Repo/badge.svg)](https://github.com/AllenCellModeling/cookiecutter-pypackage/tree/example-build)
